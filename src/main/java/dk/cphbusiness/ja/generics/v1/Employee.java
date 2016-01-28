@@ -26,8 +26,7 @@ public class Employee {
   public final void setDepartment(Department value) { 
     if (department != null) department.getEmployees().remove(this);
     department = value;
-    // We are lucky this can only be an employee,
-    // the Department#employees list would accept anything.
+    // Now Department#employees only accepts Employees.
     if (department != null) department.getEmployees().add(this);
     }
   
