@@ -10,7 +10,7 @@ public class Employee {
     this.id = id;
     this.name = name;
     this.salary = salary;
-    this.department = department;
+    setDepartment(department);
     }
 
   public int getId() { return id; }
@@ -23,7 +23,13 @@ public class Employee {
 
   public Department getDepartment() { return department; }
   
-  public void setDepartment(Department value) { department = value; }
+  public final void setDepartment(Department value) { 
+    if (department != null) department.getEmployees().remove(this);
+    department = value;
+    // We are lucky this can only be an employee,
+    // the Department#employees list would accept anything.
+    if (department != null) department.getEmployees().add(this);
+    }
   
   }
 
