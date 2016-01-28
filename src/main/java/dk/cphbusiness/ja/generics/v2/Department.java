@@ -7,7 +7,7 @@ public class Department {
   private final String code;
   private String name;
   
-  private final List<Employee> employees = new ArrayList<Employee>();
+  private final List<Employee> employees = new ArrayList<>();
 
   public double totalSalary() {
     double total = 0.0;
