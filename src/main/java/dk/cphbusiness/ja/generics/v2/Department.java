@@ -1,6 +1,9 @@
 package dk.cphbusiness.ja.generics.v2;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 
 public class Department {
@@ -11,13 +14,10 @@ public class Department {
 
   public double totalSalary() {
     double total = 0.0;
-    for (int i = 0; i < employees.size(); i++) {
-      Employee employee = employees.get(i);
-      total = total + employee.getSalary();
-      }
+    for (Employee employee : employees) total += employee.getSalary();
     return total;
     }
-  
+    
   public List<Employee> getEmployees() { return employees; }
   
   public Department(String code, String name) {
