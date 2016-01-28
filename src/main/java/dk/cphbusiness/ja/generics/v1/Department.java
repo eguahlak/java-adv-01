@@ -8,7 +8,7 @@ public class Department {
   public double totalSalary() {
     double total = 0.0;
     for (int i = 0; i < employees.size(); i++) {
-      Employee employee = (Employee)employees.get(i);
+      Employee employee = employees.get(i);
       total = total + employee.getSalary();
       }
     return total;
