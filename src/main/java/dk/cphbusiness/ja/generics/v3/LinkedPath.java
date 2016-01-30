@@ -4,7 +4,7 @@ import java.util.Iterator;
 
 public class LinkedPath<T> implements Path<T> {
   private final T first;
-  private Path<T> rest;
+  private final Path<T> rest;
 
   public LinkedPath(T first) {
     this.first = first;
@@ -23,6 +23,15 @@ public class LinkedPath<T> implements Path<T> {
       }
     this.first = first;
     this.rest = rest;
+    }
+  
+  public static <T> Path<T> create(Iterable<T> steps) {
+    return create(steps.iterator());
+    }
+  
+  private static <T> Path<T> create(Iterator<T> iterator) {
+    if (!iterator.hasNext()) return Path.EMPTY;
+    return new LinkedPath<>(iterator.next(), create(iterator));
     }
   
   @Override
