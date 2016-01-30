@@ -1,34 +1,22 @@
 package dk.cphbusiness.ja.generics.v3;
 
-import java.util.Collections;
+import static java.util.Collections.emptyIterator;
 import java.util.Iterator;
 
 public interface Path<T> extends Iterable<T> {
-  static final Path EMPTY = new Empty();
-  T getFirst();
-  Path<T> getRest();
-  boolean isEmpty();
-  
-  class Empty implements Path {
+  static final Path EMPTY = new Path(){};
 
-    @Override
-    public Object getFirst() {
-      throw new UnsupportedOperationException("Empty path has no first");
-      }
-
-    @Override
-    public Path getRest() {
-      throw new UnsupportedOperationException("Empty path has no rest");
-      }
-
-    @Override
-    public boolean isEmpty() { return true; }
-    
-    @Override
-    public Iterator iterator() { 
-      return Collections.emptyIterator();
-      }
-
+  default T getFirst() {
+    throw new UnsupportedOperationException("Empty path has no first");
     }
+
+  default Path<T> getRest() {
+    throw new UnsupportedOperationException("Empty path has no rest");
+    }
+
+  default boolean isEmpty() { return true; }
+
+  @Override
+  default Iterator<T> iterator() { return emptyIterator(); }
   
   }
