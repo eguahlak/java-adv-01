@@ -20,3 +20,4 @@ public interface Path<T> extends Iterable<T> {
   default Iterator<T> iterator() { return emptyIterator(); }
   
   }
+

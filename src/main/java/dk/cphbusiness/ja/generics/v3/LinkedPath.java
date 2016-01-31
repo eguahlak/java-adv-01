@@ -5,6 +5,8 @@ import java.util.Iterator;
 public class LinkedPath<T> implements Path<T> {
   private final T first;
   private final Path<T> rest;
+  
+  // <editor-fold desc="LinkedPath operations ">
 
   public LinkedPath(T first) {
     this.first = first;
@@ -43,6 +45,8 @@ public class LinkedPath<T> implements Path<T> {
   @Override
   public boolean isEmpty() { return false; }
   
+  // </editor-fold>
+  
   @Override
   public Iterator<T> iterator() { return new PathIterator<>(this); }
 
@@ -66,3 +70,7 @@ public class LinkedPath<T> implements Path<T> {
     }
   
   }
+
+
+
+  

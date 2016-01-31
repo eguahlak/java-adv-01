@@ -9,7 +9,7 @@
       <w>110</w>
       <h>80</h>
     </coordinates>
-    <panel_attributes>Employee
+    <panel_attributes>*Employee*
 --
 id: int
 name: String
@@ -24,7 +24,7 @@ salary: double</panel_attributes>
       <w>100</w>
       <h>60</h>
     </coordinates>
-    <panel_attributes>Department
+    <panel_attributes>*Department*
 --
 code: String
 name: string</panel_attributes>
