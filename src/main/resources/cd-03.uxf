@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="13.3">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>430</x>
+      <y>140</y>
+      <w>150</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>template=K: Object
+&lt;&lt;interface&gt;&gt;
+*Identifiable*
+--
+--
+getKey(): K</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>260</x>
+      <y>280</y>
+      <w>190</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>*Employee*
+--
+key: Integer
+firstName: String
+...
+--
+getKey(): Integer
+getFirstName(): string
+setFirstName(value: String)
+...</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>480</x>
+      <y>280</y>
+      <w>170</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>*Department*
+--
+key: String
+name: String
+...
+--
+getKey(): String
+getName(): string
+setName(value: String)
+...</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>430</x>
+      <y>220</y>
+      <w>30</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>520</x>
+      <y>220</y>
+      <w>30</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+</diagram>

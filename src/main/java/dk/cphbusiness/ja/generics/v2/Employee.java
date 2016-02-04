@@ -1,10 +1,15 @@
 package dk.cphbusiness.ja.generics.v2;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashSet;
+
 public class Employee {
   private final int id;
   private String name;
   private double salary;
   private Department department;
+  private final Collection<Project> projects = new HashSet<>();
 
   public Employee(int id, String name, double salary, Department department) {
     this.id = id;
@@ -29,7 +34,17 @@ public class Employee {
     // Now Department#employees only accepts Employees.
     if (department != null) department.getEmployees().add(this);
     }
+
+  public Collection<Project> getProjects() {
+    return projects;
+    }
   
+  public Employee add(Project project) {
+    boolean changed = projects.add(project);
+    if (changed) project.addWorker(this);
+    return this;
+    }
+
   }
 
 
